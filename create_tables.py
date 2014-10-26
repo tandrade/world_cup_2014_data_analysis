@@ -7,9 +7,10 @@ PK_TABLES = {}
 PK_TABLES['players'] = ('''
 CREATE TABLE `players` ( 
 `player_id` int(6) NOT NULL AUTO_INCREMENT, 
-`number` varchar(3), 
+`squad_number` varchar(120),
+`league_number` varchar(120), 
 `name` varchar(120) NOT NULL, 
-`position` varchar(3), 
+`position` varchar(120), 
 `club_id` int(6) NOT NULL, 
 `team_id` int(6) NOT NULL, 
 PRIMARY KEY (`player_id`), 
@@ -85,7 +86,7 @@ try:
     print 'CREATING DATABASE: %s' % name 
     cur.execute(command) 
 except mdb.Error, e: 
-  print "Error %d: %s" %(e.args[0], e.args[1]) 
+  print "Error %d: %s" %(e. args[0], e.args[1]) 
 finally: 
   if cur: 
     cur.close() 
